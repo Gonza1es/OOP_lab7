@@ -63,8 +63,8 @@ public class ApplicationController extends JFrame implements ActionListener {
                 String payload = getFilePayload(chooser.getSelectedFile());
                 Matrix matrix = new Matrix(payload);
                 GraphService graphService = new GraphServiceImpl(matrix);
-                GraphWindow graphWindow = new DirectedGraphWindow();
-                graphWindow.showGraphWindow(graphService.getGraph());
+                GraphWindow graphWindow = new StateGraphWindow(graphService.getGraph(), matrix);
+                graphWindow.showGraphWindow();
             } catch (IOException | IllegalArgumentException ex) {
                 showErrorWindow(ex.getMessage());
             }

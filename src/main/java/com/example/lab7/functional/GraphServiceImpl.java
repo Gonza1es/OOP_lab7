@@ -20,10 +20,10 @@ public class GraphServiceImpl implements GraphService{
             graph.addVertex(i+1);
         }
         for (int i = 0; i < matrixPayload.length; i++) {
-            for (int j = 0; j < matrixPayload.length; j++) {
-                if (matrixPayload[i][j] == 1) {
+            for (int j = 0; j < matrixPayload[0].length; j++) {
+                if (matrixPayload[i][j] != 0) {
                     String edge = i+1 + "-" + j+1;
-                    graph.addEdge(edge, i+1, j+1, EdgeType.DIRECTED);
+                    graph.addEdge(edge, i+1, matrixPayload[i][j], EdgeType.DIRECTED);
                 }
             }
         }
