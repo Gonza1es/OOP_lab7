@@ -53,7 +53,7 @@ public class StateGraphWindow implements GraphWindow {
         panel.setLayout(new BorderLayout());
         panel.add(graphPanel, BorderLayout.NORTH);
         panel.add(boxPanel, BorderLayout.AFTER_LAST_LINE);
-        JFrame frame = new JFrame("Окно представления графа");
+        JFrame frame = new JFrame("Граф состояний");
         frame.add(panel);
         frame.pack();
         frame.setVisible(true);
